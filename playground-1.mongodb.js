@@ -8,9 +8,12 @@ db.users.aggregate([
   {$group: {
     _id: {
       status: "$status"
-  },
+    },
     avgAge: {
       $avg: "$age"
     }
+  }},
+  {$sort: {
+    status: 1
   }}
 ])
